@@ -5,6 +5,7 @@ import java.awt.Color;
 import jgame.GRootContainer;
 import jgame.Game;
 import jgame.ImageCache;
+import jgame.SoundManager;
 
 
 public class Pong extends Game {
@@ -24,6 +25,10 @@ public class Pong extends Game {
 	
 	public Pong() {
 		ImageCache.create(Pong.class, "/org/mrumrocks/pong/rsc/");
+		// Create a sound cache.
+		// We can get a reference to this later with:
+		// SoundManager.forClass(Pong.class)
+		SoundManager.create(Pong.class, "/org/mrumrocks/pong/rsc/");
 		 GRootContainer root = new GRootContainer(Color.BLACK);
 		    setRootContainer(root);
 
@@ -34,5 +39,4 @@ public class Pong extends Game {
 		}
 	
 	
-
 }
